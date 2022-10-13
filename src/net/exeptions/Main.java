@@ -21,8 +21,13 @@ public class Main {
         System.out.println("Подтвердите пароль:");
         confirmPassword = scanner.next();
 
-        if (Data.checkData(login, password, confirmPassword)) {
-            System.out.println("Данные верны.");
+        try {
+            if (Data.checkData(login, password, confirmPassword)) {
+                System.out.println("Данные верны.");
+            }
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
         }
+
     }
 }

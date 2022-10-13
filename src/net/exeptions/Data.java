@@ -7,7 +7,7 @@ public class Data {
             throw new WrongLoginException("Логин задан в неверном формате");
         }
         if (!password.matches("^[0-9a-zA-Z_]{1,20}$") || !password.equals(confirmPassword)) {
-            throw new WrongPasswordException();
+            throw new WrongPasswordException("Пароль задан в неверном формате или не совпадает");
         }
         return true;
     }
